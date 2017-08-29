@@ -1,24 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace StringAverage
 {
     internal class StringAverage
     {
+        private static readonly Dictionary<string, int> NumberMapping = new Dictionary<string, int>
+        {
+            {"one", 1},
+            {"two", 2}
+        };
+
         public static string Avg(string stringOfNumbers)
         {
             if (string.IsNullOrEmpty(stringOfNumbers))
                 return "n/a";
 
-            var numberMapping = new Dictionary<string, int>
-            {
-                {"one", 1},
-                {"two", 2}
-            };
-
-            var numberTokens = stringOfNumbers.Split(' ');
-            var avg = numberTokens.Select(t => numberMapping[t]).Sum()/numberTokens.Length;
-            return numberMapping.First(pair => pair.Value == avg).Key;
+            var numbers = stringOfNumbers.Split(' ').Select(t => NumberMapping[t]);
+            return NumberMapping.First(pair => pair.Value == numbers.Sum()/numbers.Count()).Key;
         }
     }
 }
