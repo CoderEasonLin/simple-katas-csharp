@@ -4,9 +4,12 @@ namespace StringAverage
 {
     internal class StringAverage
     {
-        public static string Avg(string empty)
+        public static string Avg(string stringOfNumbers)
         {
-            return "n/a";
+            if(string.IsNullOrEmpty(stringOfNumbers))
+                return "n/a";
+
+            return stringOfNumbers;
         }
     }
 }
