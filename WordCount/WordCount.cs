@@ -9,7 +9,8 @@ namespace WordCount
             if(string.IsNullOrEmpty(phrase))
                 return new Dictionary<string, int>();
 
-            return new Dictionary<string, int> {{phrase.Split(' ')[0], phrase.Split(' ').Length}};
+            var splitBySpace = phrase.Split(' ');
+            return new Dictionary<string, int> {{splitBySpace[0], splitBySpace.Length}};
         }
     }
 }
