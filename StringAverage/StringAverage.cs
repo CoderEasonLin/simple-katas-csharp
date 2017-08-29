@@ -8,6 +8,7 @@ namespace StringAverage
     {
         private static readonly Dictionary<string, int> NumberMapping = new Dictionary<string, int>
         {
+            {"zero", 0},
             {"one", 1},
             {"two", 2},
             {"three", 3},
