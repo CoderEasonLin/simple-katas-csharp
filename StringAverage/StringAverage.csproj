@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringAverage.cs" />
+    <Compile Include="StringAverageTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
