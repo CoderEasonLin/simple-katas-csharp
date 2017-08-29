@@ -7,7 +7,7 @@
             if (string.IsNullOrEmpty(stringOfNumbers))
                 return "n/a";
 
-            return stringOfNumbers;
+            return stringOfNumbers.Split(' ')[0];
         }
     }
 }
