@@ -43,5 +43,11 @@ namespace WordCount
                 WordCount.Count("a b b b c c"));
         }
 
+        [Test]
+        public void requirement_test_should_return_correctly()
+        {
+            CollectionAssert.AreEqual(new Dictionary<string, int> {{"olly", 2}, {"in", 1}, {"come", 1}, {"free", 1}},
+                WordCount.Count("olly olly in come free"));
+        }
     }
 }
