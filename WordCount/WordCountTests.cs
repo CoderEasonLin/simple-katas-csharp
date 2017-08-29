@@ -30,12 +30,6 @@ namespace WordCount
         }
 
         [Test]
-        public void given_a_b_should_return_correctly()
-        {
-            CollectionAssert.AreEqual(new Dictionary<string, int> {{"a", 1}, {"b", 1}}, WordCount.Count("a b"));
-        }
-
-        [Test]
         public void given_a_b_c_should_return_correctly()
         {
             CollectionAssert.AreEqual(new Dictionary<string, int> {{"a", 1}, {"b", 1}, {"c", 1}},
