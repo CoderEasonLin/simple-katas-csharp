@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace WordCount
 {
@@ -6,11 +8,18 @@ namespace WordCount
     {
         public static Dictionary<string, int> Count(string phrase)
         {
-            if(string.IsNullOrEmpty(phrase))
-                return new Dictionary<string, int>();
+            var result = new Dictionary<string, int>();
+            if (string.IsNullOrEmpty(phrase))
+                return result;
 
-            var splitBySpace = phrase.Split(' ');
-            return new Dictionary<string, int> {{splitBySpace[0], splitBySpace.Length}};
+            var tokens = phrase.Split(' ');
+            foreach (var token in tokens)
+            {
+                if (result.ContainsKey(token))
+                    continue;
+                result[token] = tokens.Count(t => t == token);
+            }
+            return result;
         }
     }
 }
