@@ -46,5 +46,11 @@ namespace StringAverage
         {
             Assert.AreEqual("four", StringAverage.Avg("three five"));
         }
+
+        [Test]
+        public void given_zero_should_return_zero()
+        {
+            Assert.AreEqual("zero", StringAverage.Avg("zero"));
+        }
     }
 }
