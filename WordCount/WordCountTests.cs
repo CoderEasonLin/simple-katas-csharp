@@ -16,5 +16,11 @@ namespace WordCount
             CollectionAssert.AreEqual(new Dictionary<string, int>(), WordCount.Count(""));
         }
 
+        [Test]
+        public void given_a_should_return_correctly()
+        {
+            CollectionAssert.AreEqual(new Dictionary<string, int> { { "a", 1 } }, WordCount.Count("a"));
+        }
+
     }
 }
