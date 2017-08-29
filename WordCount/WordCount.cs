@@ -8,9 +8,9 @@ namespace WordCount
 {
     class WordCount
     {
-        public static int Count(string empty)
+        public static Dictionary<string, int> Count(string phrase)
         {
-            throw new NotImplementedException();
+            return new Dictionary<string, int>();
         }
     }
 }

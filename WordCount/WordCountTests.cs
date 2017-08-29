@@ -13,7 +13,8 @@ namespace WordCount
         [Test]
         public void string_empty_should_return_0()
         {
-            Assert.AreEqual(0, WordCount.Count(""));
+            CollectionAssert.AreEqual(new Dictionary<string, int>(), WordCount.Count(""));
         }
+
     }
 }
