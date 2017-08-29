@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace WordCount
 {
     [TestFixture]
-    class WordCountTests
+    internal class WordCountTests
     {
         [Test]
         public void string_empty_should_return_0()
@@ -20,13 +20,19 @@ namespace WordCount
         [Test]
         public void given_a_should_return_correctly()
         {
-            CollectionAssert.AreEqual(new Dictionary<string, int> { { "a", 1 } }, WordCount.Count("a"));
+            CollectionAssert.AreEqual(new Dictionary<string, int> {{"a", 1}}, WordCount.Count("a"));
         }
 
         [Test]
         public void given_a_a_should_return_correctly()
         {
-            CollectionAssert.AreEqual(new Dictionary<string, int> { { "a", 2 } }, WordCount.Count("a a"));
+            CollectionAssert.AreEqual(new Dictionary<string, int> {{"a", 2}}, WordCount.Count("a a"));
+        }
+
+        [Test]
+        public void given_a_b_should_return_correctly()
+        {
+            CollectionAssert.AreEqual(new Dictionary<string, int> {{"a", 1}, {"b", 1}}, WordCount.Count("a b"));
         }
     }
 }
