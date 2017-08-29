@@ -6,7 +6,7 @@ namespace StringAverage
     {
         public static string Avg(string empty)
         {
-            throw new NotImplementedException();
+            return "n/a";
         }
     }
 }
