@@ -30,9 +30,18 @@ namespace StringAverage
             if (!numberStrings.All(t => NumberMapping.ContainsKey(t)))
                 return "n/a";
 
-            var avg = numberStrings
-                .Select(t => NumberMapping[t])
-                .Sum() / numberStrings.Length;
+            return ToString(Avg(numberStrings));
+        }
+
+        private static int Avg(string[] numberStrings)
+        {
+            return numberStrings
+                       .Select(t => NumberMapping[t])
+                       .Sum() / numberStrings.Length;
+        }
+
+        private static string ToString(int avg)
+        {
             return NumberMapping.First(pair => pair.Value == avg).Key;
         }
     }
