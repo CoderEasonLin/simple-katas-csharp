@@ -28,5 +28,11 @@ namespace StringAverage
         {
             Assert.AreEqual("four", StringAverage.Avg("zero nine five two"));
         }
+
+        [Test]
+        public void given_eleven_should_return_na()
+        {
+            Assert.AreEqual("n/a", StringAverage.Avg("eleven"));
+        }
     }
 }
