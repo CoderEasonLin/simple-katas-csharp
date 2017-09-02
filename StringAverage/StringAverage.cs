@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 
 namespace StringAverage
 {
@@ -20,13 +21,19 @@ namespace StringAverage
             {"nine", 9}
         };
 
-        public static string Avg(string stringOfNumbers)
+        public static string Avg(string numberString)
         {
-            if (string.IsNullOrEmpty(stringOfNumbers))
+            if (string.IsNullOrEmpty(numberString))
                 return "n/a";
 
-            var numbers = stringOfNumbers.Split(' ').Select(t => NumberMapping[t]);
-            return NumberMapping.First(pair => pair.Value == numbers.Sum()/numbers.Count()).Key;
+            var numberStrings = numberString.Split(' ');
+            if (!numberStrings.All(t => NumberMapping.ContainsKey(t)))
+                return "n/a";
+
+            var avg = numberStrings
+                .Select(t => NumberMapping[t])
+                .Sum() / numberStrings.Length;
+            return NumberMapping.First(pair => pair.Value == avg).Key;
         }
     }
 }
